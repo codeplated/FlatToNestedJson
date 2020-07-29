@@ -1,2 +1,10 @@
 # FlatToNestedJson
-Python flask application to dynamincally nest flat JSONs
+Python flask API to dynamincally nest flat JSONs
+
+
+# Endpoints
+1) /quakeData [GET]
+Takes one query parameter "sortingOrder" with any number of "|" seperated keys to dynamically nest JSON. This end point fetch Earthquake data from the US Government website and return nested JSON based on provided parameter in sequential order.
+
+2) /nestJson [POST]
+Takes one query parameter "sortingOrder" with any number of "|" seperated keys and a flat JSON body to dynamically nest in sequential order. A sample file "input.json" can be used to provide in request body.   
