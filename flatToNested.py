@@ -84,15 +84,19 @@ def loadInputFile(inputJsonFile):
 def dumpJson(jsonData):
     with open('output.json', 'w') as fp:
         json.dump(jsonData, fp, sort_keys=True, indent=2)
-
-def mainFunc():
-    jsonData = loadInputFile('input.json')
+    
+def mainFunc(sortingOrder):
+    sortingOrder.pop(0)
+    inputJsonFile = sortingOrder.pop(0)
+    
+    flatJson = loadInputFile(inputJsonFile)
     flatToNested = FlatToNested()
     flatToNested.newDict('nestedJson')
-    sortingOrder = ['place', 'type','mag', 'time']
-    filteredJson = flatToNested.filterJson(sortingOrder, jsonData)
-    nestedJson = flatToNested.nestJson(sortingOrder, filteredJson)
+    nestedJson = flatToNested.nestJson(sortingOrder, flatJson)
+
     dumpJson(nestedJson)
-           
+    flatToNested.printDict(nestedJson)
+    print(f'\nraw data: {nestedJson}')           
+ 
 if __name__ == '__main__':
-    mainFunc()
+    mainFunc(sys.argv)
