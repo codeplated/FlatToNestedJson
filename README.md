@@ -9,6 +9,7 @@ Takes one query parameter "sortingOrder" with any number of "|" seperated keys t
 key list: mag, place, time, updated, tz, url, detail, felt, cdi, mmi, alert, status, tsunami, sig, net, code, ids, sources, types, nst, dmin, rms, gap, magType, type, title
 
 example: /quakeData?sortingOrder=mag|place|type|time
+
 keys detail: https://tinyurl.com/ybbp5kfg
 Data source: https://tinyurl.com/y5uttm6n
 
