@@ -36,6 +36,19 @@ class FlatToNested:
                 newlist.append(x)
         return newlist
     
+    def printDict(self, dictname, level=0):
+        indent = " " * (4 * level)
+        
+        for key, value in dictname.items():
+            if isinstance(value, dict):
+                print(f'\n{indent}{key}')
+                level += 1
+                self.printDict(value, level)
+            else:
+                print(f'{indent}{key}: {value}')
+            if level > 0:
+                level -= 1
+    
     def nestJson(self, sortingOrder, flatJson):
         nestingLevel = len(sortingOrder)
         keyList =  list(flatJson[0].keys())
