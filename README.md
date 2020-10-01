@@ -1,5 +1,5 @@
 # FlatToNestedJson
-Python flask API to dynamincally nest flat JSONs
+Python flask API to dynamincally nest a flat JSON
 
 
 # Endpoints
