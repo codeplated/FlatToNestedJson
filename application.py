@@ -6,8 +6,8 @@ from flask_basicauth import BasicAuth
 
 app = flask.Flask(__name__)
 app.config['DEBUG'] = True
-app.config['BASIC_AUTH_USERNAME'] = 'full-stack'
-app.config['BASIC_AUTH_PASSWORD'] = 'hayermee'
+app.config['BASIC_AUTH_USERNAME'] = 'johny'
+app.config['BASIC_AUTH_PASSWORD'] = 'english'
 basic_auth = BasicAuth(app)
 
 def addTags(tag, word):
@@ -37,7 +37,7 @@ def nestGeoJson():
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
             }
         )
-        date = urllib.request.urlopen(req)
+        data = urllib.request.urlopen(req)
     except urllib2.URLError as e:
         res = make_response('Earthquake feed unavailable: '+ str(e.reason), 500)
         return res
